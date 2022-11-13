@@ -1,6 +1,5 @@
 package com.studyscheduler;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,48 +9,53 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class Login {
-    public Login() {}
+public class Register {
+    public Register() {}
 
     @FXML
-    private Button loginButton;
+    private Button registerButton;
+    @FXML
+    private Button returnButton;
     @FXML
     private Label wrongLogin;
     @FXML
     private TextField username;
     @FXML
     private PasswordField password;
+    @FXML
+    private PasswordField passwordConfirm;
 
 
-    public void userLogin(ActionEvent action) {
-        checkLogin();
+    public void userReturn(ActionEvent action) throws IOException {
+        returnToLogin();
     }
 
-    public void userRegister(ActionEvent action) throws IOException {
+    public void userRegister(ActionEvent action) {
         registerAccount();
     }
 
 
-    private void checkLogin() {
-
-        // setting them to temporary String variables, can be changed as necessary
+    public void registerAccount() {
         String usernameTemp = username.getText();
         String passwordTemp = password.getText();
+        String passwordTemp2 = passwordConfirm.getText();
 
         if (usernameTemp.isEmpty() || passwordTemp.isEmpty()) {
             wrongLogin.setText("Please Enter Credentials");
         }
 
+        if (!passwordTemp.equals(passwordTemp2)) {
+            wrongLogin.setText("Passwords Do Not Match");
+        }
 
-        // if wrong credentials
-        // wrongLogin.setText("Incorrect Username or Password");
 
     }
 
-
-    private void registerAccount() throws IOException {
+    private void returnToLogin() throws IOException {
         Runner r = new Runner();
 
-        r.changeLoginScene("register.fxml");
+        r.changeLoginScene("login.fxml");
     }
+
+
 }
