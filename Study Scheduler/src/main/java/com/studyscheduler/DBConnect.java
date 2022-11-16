@@ -1,3 +1,5 @@
+package com.studyscheduler;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,7 +10,7 @@ public class DBConnect {
 
 	// Establishes a connection to the StudyScheduler database
 	// returns the connection to be used for queries.
-	static Connection connectToDb() {
+	public Connection connectToDb() {
 		String url = "jdbc:mysql://studyscheduler-db.cuevkg6rb9hl.us-east-1.rds.amazonaws.com:3306/StudyScheduler";
 		String username = "admin";
 		String password = "C00P4331S5Db22";
@@ -25,7 +27,7 @@ public class DBConnect {
 	}	
 		
 	// Closes the connection to the database.
-	static void closeConnect(Connection connection) {
+	public void closeConnect(Connection connection) {
 		try {
 			connection.close();
 		} catch (SQLException e) {
@@ -36,9 +38,9 @@ public class DBConnect {
 	
 	// Inserts the desired info into the correct column of the database depending on the type parameter.
 	// Takes in the connection to the database, the column to insert into, and an ArrayList of the values to be inserted.
-	static void insertStudentInfo(Connection connection, String type, ArrayList<Object> values) {
+	public void insertStudentInfo(Connection connection, String type, Object[] values) {
 		Statement statement = null;
-		String query = "INSERT INTO Student";
+		String query = "INSERT INTO Student ";
 		
 		try {
 			statement = connection.createStatement();
@@ -48,18 +50,18 @@ public class DBConnect {
 		}
 		
 		if(type.equals("NewStudent")) {
-			query = query + "(username, password) VALUES (" + argsToString(values) + ")";
+			query = query + "(username, password) VALUES (\"" + values[0] + "\", \""  + values[1] + "\");";
 		}
 		else if(type.equals("Classes")) {
-			query = query + "(classes) VALUES (" + argsToString(values) + ")";
+			query = query + "(classes) VALUES (" + argsToString(values) + ");";
 		}
 		else if(type.equals("Blockouts")) {
-			query = query + "(blockouts) VALUES (" + argsToString(values) + ")";
+			query = query + "(blockouts) VALUES (" + argsToString(values) + ");";
 		}
 		else if(type.equals("Schedules")) {
-			query = query + "(schedules) VALUES (" + argsToString(values) + ")";
+			query = query + "(schedules) VALUES (" + argsToString(values) + ");";
 		}
-		
+		System.out.println(query);
 		try {
 			statement.execute(query);
 		} catch (SQLException e) {
@@ -67,8 +69,8 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 	}
-	
-	static void updateStudentInfo(Connection connection, String type) {
+
+	public void updateStudentInfo(Connection connection, String type) {
 		Statement statement = null;
 		String query = "UPDATE Student";
 		
@@ -86,8 +88,8 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 	}
-	
-	static void deleteStudentInfo(Connection connection, String user) {
+
+	public void deleteStudentInfo(Connection connection, String user) {
 		Statement statement = null;
 		String query = "DELETE FROM Student WHERE username = " + user + ";";
 		
@@ -111,9 +113,9 @@ public class DBConnect {
 	
 	// Inserts a new class into the Classes table with all the required class info.
 	// Takes in the connection to the database and an ArrayList of the class info.
-	static void insertClass(Connection connection, ArrayList<Object> values) {
+	public void insertClass(Connection connection, Object[] values) {
 		Statement statement = null;
-		String query = "INSERT INTO Classes" + "(CourseId, CourseName, MeetingTime, CreditHours) VALUES (" + argsToString(values) + ")";
+		String query = "INSERT INTO Classes" + "(CourseId, CourseName, MeetingTime, CreditHours) VALUES (" + argsToString(values) + ");";
 		
 		try {
 			statement = connection.createStatement();
@@ -129,8 +131,8 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 	}
-	
-	static void updateClass(Connection connection) {
+
+	public void updateClass(Connection connection) {
 		Statement statement = null;
 		String query = "UPDATE Classes";
 		
@@ -148,8 +150,8 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 	}
-	
-	static void deleteClass(Connection connection, String course) {
+
+	public void deleteClass(Connection connection, String course) {
 		Statement statement = null;
 		String query = "DELETE From Classes WHERE CourseId = " + course + ";";
 		
@@ -171,7 +173,7 @@ public class DBConnect {
 	//TODO: add method to return Class info
 	
 	// Helper method to turn a list of values into a string for the MySQL queries
-	static String argsToString(ArrayList<Object> values) {
+	public String argsToString(Object[] values) {
 		StringBuilder argsString = new StringBuilder();
 		for(Object o: values) {
 			argsString.append(o.toString());

@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 public class Register {
     public Register() {}
@@ -48,6 +49,12 @@ public class Register {
             wrongLogin.setText("Passwords Do Not Match");
         }
 
+        DBConnect dbc = new DBConnect();
+        Connection con = dbc.connectToDb();
+        Object[] list = new Object[2];
+        list[0] = usernameTemp;
+        list[1] = passwordTemp;
+        dbc.insertStudentInfo(con, "NewStudent", list);
 
     }
 
