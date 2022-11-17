@@ -1,9 +1,6 @@
 package com.studyscheduler;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class DBConnect {
@@ -37,7 +34,7 @@ public class DBConnect {
 	}
 	
 	// Inserts the desired info into the correct column of the database depending on the type parameter.
-	// Takes in the connection to the database, the column to insert into, and an ArrayList of the values to be inserted.
+	// Takes in the connection to the database, the column to insert into, and an Object array of the values to be inserted.
 	public void insertStudentInfo(Connection connection, String type, Object[] values) {
 		Statement statement = null;
 		String query = "INSERT INTO Student ";
@@ -53,13 +50,13 @@ public class DBConnect {
 			query = query + "(username, password) VALUES (\"" + values[0] + "\", \""  + values[1] + "\");";
 		}
 		else if(type.equals("Classes")) {
-			query = query + "(classes) VALUES (" + argsToString(values) + ");";
+			query = query + "(classes) VALUES (\"" + argsToString(values) + "\");";
 		}
 		else if(type.equals("Blockouts")) {
-			query = query + "(blockouts) VALUES (" + argsToString(values) + ");";
+			query = query + "(blockouts) VALUES (\"" + argsToString(values) + "\");";
 		}
 		else if(type.equals("Schedules")) {
-			query = query + "(schedules) VALUES (" + argsToString(values) + ");";
+			query = query + "(schedules) VALUES (\"" + argsToString(values) + "\");";
 		}
 		System.out.println(query);
 		try {
@@ -100,7 +97,6 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 		
-		
 		try {
 			statement.execute(query);
 		} catch (SQLException e) {
@@ -109,7 +105,42 @@ public class DBConnect {
 		}
 	}
 	
-	//TODO: add a method to return student info
+	// Retrieves info from the database for the desired user
+	// Takes in a connection to the database and the user's username as a String
+	public ResultSet retrieveStudentInfo(Connection connection, String type, String user) {
+		Statement statement = null;
+		ResultSet studentInfo = null;
+		String query = "SELECT ";
+
+		try {
+			statement = connection.createStatement();
+		} catch (SQLException e) {
+			System.out.println("Error! Could not create a statement.");
+			e.printStackTrace();
+		}
+
+		if(type.equals("login")) {
+			query = query + "username, password FROM Student WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("class")) {
+			query = query + "classes FROM Student WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("blockout")) {
+			query = query + "blockouts FROM Student WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("schedule")) {
+			query = query + "schedules FROM Student WHERE username = \"" + user + "\";";
+		}
+
+		try {
+			studentInfo = statement.executeQuery(query);
+		} catch (SQLException e) {
+			System.out.println("Error! Could not execute select query");
+			e.printStackTrace();
+		}
+
+		return studentInfo;
+	}
 	
 	// Inserts a new class into the Classes table with all the required class info.
 	// Takes in the connection to the database and an ArrayList of the class info.

@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Login {
     public Login() {}
@@ -24,7 +26,7 @@ public class Login {
     private PasswordField password;
 
 
-    public void userLogin(ActionEvent action) {
+    public void userLogin(ActionEvent action) throws SQLException {
         checkLogin();
     }
 
@@ -33,7 +35,7 @@ public class Login {
     }
 
 
-    private void checkLogin() {
+    private void checkLogin() throws SQLException {
 
         // setting them to temporary String variables, can be changed as necessary
         String usernameTemp = username.getText();
@@ -43,10 +45,19 @@ public class Login {
             wrongLogin.setText("Please Enter Credentials");
         }
 
+        // Check for wrong credentials
+        DBConnect dbc = new DBConnect();
+        Connection con = dbc.connectToDb();
+
+        ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
+        student.next();
 
         // if wrong credentials
-        // wrongLogin.setText("Incorrect Username or Password");
-
+        if (usernameTemp.equals(student.getString("username")) && passwordTemp.equals(student.getString("password")))
+            wrongLogin.setText("Success");
+        else{
+            wrongLogin.setText("Incorrect Username or Password");
+        }
     }
 
 
