@@ -1,6 +1,7 @@
 package com.studyscheduler;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.Optional;
 
 import javafx.event.ActionEvent;
@@ -72,6 +73,10 @@ public class HomeScreen {
         
         if ((result.isPresent()) && (result.get() == ButtonType.OK)) {
             // TODO: add db account deletion code here
+            DBConnect dbc = new DBConnect();
+            Connection con = dbc.connectToDb();
+            dbc.deleteStudentInfo(con, usernameTemp);
+            dbc.closeConnect(con);
 
             // TODO: add code to return to login screen after account deletion
         }
@@ -83,9 +88,10 @@ public class HomeScreen {
         String usernameTemp2 = newUsernameConfirm.getText();
         String passwordTemp = passConfirm.getText();
 
-
-        // TODO: add DB code
-
+        DBConnect dbc = new DBConnect();
+        Connection con = dbc.connectToDb();
+        dbc.updateStudentInfo(con, "username", usernameTemp, usernameTemp2);
+        dbc.closeConnect(con);
         // TODO: add code to change scenes
     }
 
@@ -95,8 +101,12 @@ public class HomeScreen {
         String newTemp = newPassword.getText();
         String newTemp2 = newPasswordConfirm.getText();
 
-        // TODO: add DB code
-
+        if(newTemp2.equals(newTemp)) {
+            DBConnect dbc = new DBConnect();
+            Connection con = dbc.connectToDb();
+            dbc.updateStudentInfo(con, "password", usernameTemp, newTemp);
+            dbc.closeConnect(con);
+        }
         // TODO: add code to change scenes
     }
 

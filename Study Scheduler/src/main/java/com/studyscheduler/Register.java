@@ -55,6 +55,7 @@ public class Register {
         list[0] = usernameTemp;
         list[1] = passwordTemp;
         dbc.insertStudentInfo(con, "NewStudent", list);
+        dbc.closeConnect(con);
 
     }
 

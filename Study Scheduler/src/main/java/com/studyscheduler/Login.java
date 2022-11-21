@@ -51,6 +51,7 @@ public class Login {
         Connection con = dbc.connectToDb();
 
         ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
+        dbc.closeConnect(con);
         student.next();
 
         // if wrong credentials

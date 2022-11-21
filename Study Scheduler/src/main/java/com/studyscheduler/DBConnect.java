@@ -67,7 +67,7 @@ public class DBConnect {
 		}
 	}
 
-	public void updateStudentInfo(Connection connection, String type) {
+	public void updateStudentInfo(Connection connection, String type, String user, String newInfo) {
 		Statement statement = null;
 		String query = "UPDATE Student";
 		
