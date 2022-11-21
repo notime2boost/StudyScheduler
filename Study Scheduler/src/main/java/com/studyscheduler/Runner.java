@@ -33,6 +33,15 @@ public class Runner extends Application {
         stageMaster.show();
     }
 
+    public void changeScene(String filename) throws IOException {
+        stageMaster.setResizable(true);
+        FXMLLoader fxmlLoader = new FXMLLoader(Runner.class.getResource(filename));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        stageMaster.setTitle("Study Scheduler");
+        stageMaster.setScene(scene);
+        stageMaster.show();
+    }
+
     public static void main(String[] args) {
         launch();
     }

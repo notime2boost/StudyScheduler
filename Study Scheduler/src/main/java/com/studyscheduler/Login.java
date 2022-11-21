@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class Login {
     public Login() {}
 
@@ -25,8 +26,8 @@ public class Login {
     @FXML
     private PasswordField password;
 
-
-    public void userLogin(ActionEvent action) throws SQLException {
+    @FXML
+    public void userLogin(ActionEvent action) throws SQLException, IOException {
         checkLogin();
     }
 
@@ -35,7 +36,7 @@ public class Login {
     }
 
 
-    private void checkLogin() throws SQLException {
+    private void checkLogin() throws SQLException, IOException {
 
         // setting them to temporary String variables, can be changed as necessary
         String usernameTemp = username.getText();
@@ -53,8 +54,15 @@ public class Login {
         student.next();
 
         // if wrong credentials
-        if (usernameTemp.equals(student.getString("username")) && passwordTemp.equals(student.getString("password")))
+        if (usernameTemp.equals(student.getString("username")) && passwordTemp.equals(student.getString("password"))) {
             wrongLogin.setText("Success");
+
+            // Change scene
+            Runner r = new Runner();
+            r.changeScene("home.fxml");
+            
+
+        }
         else{
             wrongLogin.setText("Incorrect Username or Password");
         }
