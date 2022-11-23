@@ -50,7 +50,6 @@ public class Login {
         Connection con = dbc.connectToDb();
 
         ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
-        dbc.closeConnect(con);
         student.next();
 
         // if wrong credentials
@@ -64,9 +63,15 @@ public class Login {
             
 
         }
-        else{
-            wrongLogin.setText("Incorrect Username or Password");
+        else if (!usernameTemp.equals(student.getString("username"))) {
+            wrongLogin.setText("Incorrect Username");
         }
+
+        else if (!passwordTemp.equals(student.getString("password"))) {
+            wrongLogin.setText("Incorrect Password");
+        }
+
+        dbc.closeConnect(con);
     }
 
 
