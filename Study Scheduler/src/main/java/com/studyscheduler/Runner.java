@@ -2,7 +2,6 @@ package com.studyscheduler;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -10,7 +9,7 @@ import java.io.IOException;
 
 public class Runner extends Application {
     private static Stage stageMaster;
-
+    private static String savedUsername = "";
 
 
     @Override
@@ -41,6 +40,16 @@ public class Runner extends Application {
         stageMaster.setScene(scene);
         stageMaster.show();
     }
+
+
+    public void setUser(String input) {
+        savedUsername = input;
+    }
+
+    public String getUser() {
+        return savedUsername;
+    }
+
 
     public static void main(String[] args) {
         launch();

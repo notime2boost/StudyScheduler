@@ -61,7 +61,6 @@ public class Register {
 
     private void returnToLogin() throws IOException {
         Runner r = new Runner();
-
         r.changeLoginScene("login.fxml");
     }
 

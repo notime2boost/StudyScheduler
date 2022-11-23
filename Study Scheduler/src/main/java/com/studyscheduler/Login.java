@@ -26,7 +26,6 @@ public class Login {
     @FXML
     private PasswordField password;
 
-    @FXML
     public void userLogin(ActionEvent action) throws SQLException, IOException {
         checkLogin();
     }
@@ -60,6 +59,7 @@ public class Login {
 
             // Change scene
             Runner r = new Runner();
+            r.setUser(usernameTemp);
             r.changeScene("home.fxml");
             
 

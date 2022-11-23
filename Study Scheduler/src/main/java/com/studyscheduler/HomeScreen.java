@@ -15,6 +15,10 @@ import javafx.scene.control.Alert.AlertType;
 
 public class HomeScreen {
     @FXML
+    private Button viewButton;
+    @FXML
+    private Button downloadButton;
+    @FXML
     private Button logoutButton;
     @FXML
     private Button accountButton;
@@ -75,7 +79,7 @@ public class HomeScreen {
             // TODO: add db account deletion code here
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
-            dbc.deleteStudentInfo(con, usernameTemp);
+            dbc.deleteStudentInfo(con, "usernameTemp");
             dbc.closeConnect(con);
 
             // TODO: add code to return to login screen after account deletion
@@ -104,10 +108,25 @@ public class HomeScreen {
         if(newTemp2.equals(newTemp)) {
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
-            dbc.updateStudentInfo(con, "password", usernameTemp, newTemp);
+            dbc.updateStudentInfo(con, "password", "usernameTemp", newTemp);
             dbc.closeConnect(con);
         }
         // TODO: add code to change scenes
     }
 
+
+    public void userDownload() {
+        // TODO: Add code for download
+    }
+
+
+    public void userViewSchedule() {
+        // TODO: add code to view schedule
+    }
+
+    public void userEdit() throws IOException {
+        Runner r = new Runner();
+
+        r.changeScene("home.fxml");
+    }
 }
