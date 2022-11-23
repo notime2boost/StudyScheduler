@@ -92,10 +92,14 @@ public class HomeScreen {
         String usernameTemp2 = newUsernameConfirm.getText();
         String passwordTemp = passConfirm.getText();
 
+        Runner r = new Runner();
+
         DBConnect dbc = new DBConnect();
         Connection con = dbc.connectToDb();
-        dbc.updateStudentInfo(con, "username", usernameTemp, usernameTemp2);
+        dbc.updateStudentInfo(con, "username", r.getUser(), usernameTemp2);
         dbc.closeConnect(con);
+
+        r.setUser(usernameTemp);
         // TODO: add code to change scenes
     }
 
@@ -105,10 +109,12 @@ public class HomeScreen {
         String newTemp = newPassword.getText();
         String newTemp2 = newPasswordConfirm.getText();
 
+        Runner r = new Runner();
+
         if(newTemp2.equals(newTemp)) {
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
-            dbc.updateStudentInfo(con, "password", "usernameTemp", newTemp);
+            dbc.updateStudentInfo(con, "password", r.getUser(), newTemp);
             dbc.closeConnect(con);
         }
         // TODO: add code to change scenes

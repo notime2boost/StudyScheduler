@@ -49,13 +49,13 @@ public class DBConnect {
 		if(type.equals("NewStudent")) {
 			query = query + "(username, password) VALUES (\"" + values[0] + "\", \""  + values[1] + "\");";
 		}
-		else if(type.equals("Classes")) {
+		else if(type.equals("classes")) {
 			query = query + "(classes) VALUES (\"" + argsToString(values) + "\");";
 		}
-		else if(type.equals("Blockouts")) {
+		else if(type.equals("blockouts")) {
 			query = query + "(blockouts) VALUES (\"" + argsToString(values) + "\");";
 		}
-		else if(type.equals("Schedules")) {
+		else if(type.equals("schedules")) {
 			query = query + "(schedules) VALUES (\"" + argsToString(values) + "\");";
 		}
 		System.out.println(query);
@@ -69,7 +69,7 @@ public class DBConnect {
 
 	public void updateStudentInfo(Connection connection, String type, String user, String newInfo) {
 		Statement statement = null;
-		String query = "UPDATE Student";
+		String query = "UPDATE Student ";
 		
 		try {
 			statement = connection.createStatement();
@@ -77,7 +77,23 @@ public class DBConnect {
 			System.out.println("Error! Could not create a statement.");
 			e.printStackTrace();
 		}
-		
+
+		if(type.equals("username")) {
+			query = query + "SET username = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("password")) {
+			query = query + "SET password = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("classes")) {
+			query = query + "SET classes = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("blockouts")) {
+			query = query + "SET blockouts = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+		}
+		else if(type.equals("schedules")) {
+			query = query + "SET schedules = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+		}
+
 		try {
 			statement.execute(query);
 		} catch (SQLException e) {
