@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Register {
     public Register() {}
@@ -31,12 +33,12 @@ public class Register {
         returnToLogin();
     }
 
-    public void userRegister(ActionEvent action) {
+    public void userRegister(ActionEvent action) throws SQLException {
         registerAccount();
     }
 
 
-    public void registerAccount() {
+    public void registerAccount() throws SQLException {
         String usernameTemp = username.getText();
         String passwordTemp = password.getText();
         String passwordTemp2 = passwordConfirm.getText();
@@ -51,12 +53,24 @@ public class Register {
 
         DBConnect dbc = new DBConnect();
         Connection con = dbc.connectToDb();
-        Object[] list = new Object[2];
-        list[0] = usernameTemp;
-        list[1] = passwordTemp;
-        dbc.insertStudentInfo(con, "NewStudent", list);
-        dbc.closeConnect(con);
 
+        // Check to see if this username is already taken.
+        ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
+        student.next();
+
+        // If it is taken, let the user know
+        if (usernameTemp.equals(student.getString("username"))) {
+            wrongLogin.setText("Username Is Already Taken. Please Choose Another.");
+        }
+
+        // If it is available create a new account
+        else {
+            Object[] list = new Object[2];
+            list[0] = usernameTemp;
+            list[1] = passwordTemp;
+            dbc.insertStudentInfo(con, "NewStudent", list);
+        }
+        dbc.closeConnect(con);
     }
 
     private void returnToLogin() throws IOException {
