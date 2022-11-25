@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
+// controller for: home and account settings
 public class HomeScreen {
     @FXML
     private Button viewButton;

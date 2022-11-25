@@ -37,12 +37,10 @@
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar layoutX="44.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="597.0">
+            <ButtonBar layoutX="44.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="597.0">
               <buttons>
-                  <Button fx:id="viewClassB" mnemonicParsing="false" onAction="#viewClass" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="View ClassList" />
-                  <Button fx:id="addClassB" mnemonicParsing="false" onAction="#addClass" prefHeight="39.0" prefWidth="136.0" style="-fx-background-color: #ccc613;" text="Add Class" />
-                  <Button fx:id="editClassB" mnemonicParsing="false" onAction="#editClass" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Edit Class" />
-                  <Button fx:id="delClassB" layoutX="33.0" layoutY="11.0" mnemonicParsing="false" onAction="#delClass" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Delete Class" />
+                  <Button fx:id="blockButton" mnemonicParsing="false" onAction="#viewBlockout" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #ccc613;" text="Edit Blockout Times" />
+                  <Button fx:id="classButton1" mnemonicParsing="false" onAction="#viewClass" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Edit ClassList" />
               </buttons>
             </ButtonBar>
          </children>

@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+// controller for: login
 public class Login {
     public Login() {}
 
