@@ -66,7 +66,7 @@ public class HomeScreen {
     }
 
 
-    public void userDelAccount(ActionEvent Action) {
+    public void userDelAccount(ActionEvent Action) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Confirm Account Deletion");
         String s = "This will permanently delete your account with us, are you sure?";
@@ -76,18 +76,18 @@ public class HomeScreen {
         
         
         if ((result.isPresent()) && (result.get() == ButtonType.OK)) {
-            // TODO: add db account deletion code here
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
             dbc.deleteStudentInfo(con, "usernameTemp");
             dbc.closeConnect(con);
 
-            // TODO: add code to return to login screen after account deletion
+            Runner r = new Runner();
+            r.changeLoginScene("login.fxml");
         }
     }
 
 
-    public void userUpdateUsername(ActionEvent Action) {
+    public void userUpdateUsername(ActionEvent Action) throws IOException {
         String usernameTemp = newUsername.getText();
         String usernameTemp2 = newUsernameConfirm.getText();
         String passwordTemp = passConfirm.getText();
@@ -100,11 +100,12 @@ public class HomeScreen {
         dbc.closeConnect(con);
 
         r.setUser(usernameTemp);
-        // TODO: add code to change scenes
+        
+        r.changeScene("accountSettings.fxml");
     }
 
 
-    public void userUpdatePassword(ActionEvent Action) {
+    public void userUpdatePassword(ActionEvent Action) throws IOException {
         String originalTemp = originalPassword.getText();
         String newTemp = newPassword.getText();
         String newTemp2 = newPasswordConfirm.getText();
@@ -117,7 +118,8 @@ public class HomeScreen {
             dbc.updateStudentInfo(con, "password", r.getUser(), newTemp);
             dbc.closeConnect(con);
         }
-        // TODO: add code to change scenes
+
+        r.changeScene("accountSettings.fxml");
     }
 
 
