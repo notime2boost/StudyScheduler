@@ -66,6 +66,12 @@ public class HomeScreen {
         r.changeScene("home.fxml");
     }
 
+    public void inputData(ActionEvent Action) throws IOException {
+        Runner r = new Runner();
+
+        r.changeScene("Blocker.fxml");
+    }
+
 
     public void userDelAccount(ActionEvent Action) throws IOException {
         Alert alert = new Alert(AlertType.CONFIRMATION);
