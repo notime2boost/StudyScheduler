@@ -137,35 +137,35 @@ public class Blocker {
 
     //Used to obtain values from the textbox input
     public void textbox(ActionEvent event) {
-        x.id[0] = 11;
+        x.id[0] = 10;
         x.coursename[0] = c0.getText();
         x.courseid[0] = id0.getText();
         try{x.difficulty[0] = Integer.parseInt(d0.getText());}
         catch(NumberFormatException e){x.difficulty[0] = 1;}
         catch(Exception e){System.out.println(e);}
 
-        x.id[1] = 12;
+        x.id[1] = 11;
         x.coursename[1] = c1.getText();
         x.courseid[1] = id1.getText();
         try{x.difficulty[1] = Integer.parseInt(d1.getText());}
         catch(NumberFormatException e){x.difficulty[1] = 1;}
         catch(Exception e){System.out.println(e);}
 
-        x.id[2] = 13;
+        x.id[2] = 12;
         x.coursename[2] = c2.getText();
         x.courseid[2] = id2.getText();
         try{x.difficulty[2] = Integer.parseInt(d2.getText());}
         catch(NumberFormatException e){x.difficulty[2] = 1;}
         catch(Exception e){System.out.println(e);}
 
-        x.id[3] = 14;
+        x.id[3] = 13;
         x.coursename[3] = c3.getText();
         x.courseid[3] = id3.getText();
         try{x.difficulty[3] = Integer.parseInt(d3.getText());}
         catch(NumberFormatException e){x.difficulty[3] = 1;}
         catch(Exception e){System.out.println(e);}
 
-        x.id[4] = 15;
+        x.id[4] = 14;
         x.coursename[4] = c4.getText();
         x.courseid[4] = id4.getText();
         try{x.difficulty[4] = Integer.parseInt(d4.getText());}
@@ -192,8 +192,6 @@ public class Blocker {
                 if(x.difficulty[j] > x.difficulty[j + 1]){
                     temp = x.difficulty[j]; x.difficulty[j] = x.difficulty[j + 1]; x.difficulty[j + 1] = temp;
                     temp = x.id[j]; x.id[j] = x.id[j + 1]; x.id[j + 1] = temp;
-                    tempo = x.coursename[j]; x.coursename[j] = x.coursename[j + 1]; x.coursename[j + 1] = tempo;
-                    tempo = x.courseid[j]; x.courseid[j] = x.courseid[j + 1]; x.courseid[j + 1] = tempo;
                 }
             }
         }
@@ -324,13 +322,7 @@ public class Blocker {
                     }
                 }
             }
-            
-            //Can help identify where course names are located atm
-            for(i=0;i<5;i++) {
-                System.out.println(x.id[i]+" is class name: "+x.coursename[i]);
-            }
-            
-            System.out.println();
+
             System.out.println("SCHEDULE 1");
             System.out.println(Arrays.deepToString(x.time1).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
             System.out.println();
@@ -350,8 +342,9 @@ public class Blocker {
         x.time[7][24]: Second array represents what hour formatted in military time. Ex: x.time[z][0] = 0:00 or 12:00 am, x.time[z][1] = 1:00 or 1:00 am, etc.
         1 means blocked out time
         0 means open time
-        11,12,13,14,15 are study hours for the respective classes
-        11 being the class on the first/top textbox and 15 being the class on the last/bottom textbox.
+        10,11,12,13,14 are study hours for the respective classes
+        10 being the class on the first/top textbox and 14 being the class on the last/bottom textbox.
+        x.coursename[0] is the class name for 10, x.coursename[1] is the class name for 11, etc.
         Variables for database are listed in the Student.java class
         */
     }
