@@ -324,7 +324,13 @@ public class Blocker {
                     }
                 }
             }
-
+            
+            //Can help identify where course names are located atm
+            for(i=0;i<5;i++) {
+                System.out.println(x.id[i]+" is class name: "+x.coursename[i]);
+            }
+            
+            System.out.println();
             System.out.println("SCHEDULE 1");
             System.out.println(Arrays.deepToString(x.time1).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
             System.out.println();
