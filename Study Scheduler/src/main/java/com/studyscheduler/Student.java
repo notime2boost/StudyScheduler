@@ -11,9 +11,9 @@ public class Student {
     String[] coursename = new String[5]; //name of course; determined by first column of textboxes
     int[] difficulty = new int[5]; //difficulty of course; determined by third column of textboxes
     String[] courseid = new String[5]; //name of course ID; determined by second column of textboxes
-    int[] id = new int[5]; /*Integer I use to keep track of a class in the time[][] arrays. Can be the values 11,12,13,14,15.
-                           11 being the class on the first/top textbox and 15 being the class on the last/bottom textbox.
-                           coursename, difficulty, couseid, and id should all have the same array address which represents a course
-                           unless there are bugs :( */
+    int[] id = new int[5]; /* Integer I use to keep track of a class in the time[][] arrays. Can be the values 10,11,12,13,14.
+                           10 being the class on the first/top textbox and 14 being the class on the last/bottom textbox.   
+                           x.coursename[0] is the class name for 10, x.coursename[1] is the class name for 11, etc.
+                           */
 
 }
