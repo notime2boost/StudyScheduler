@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.studyscheduler.Blocker">
+   <children>
+      <CheckBox fx:id="s0" layoutX="15.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="s1" layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="s2" layoutX="15.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="s3" layoutX="15.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="s4" layoutX="15.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="s5" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="s6" layoutX="15.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="s7" layoutX="15.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="s8" layoutX="15.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="s9" layoutX="15.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="s10" layoutX="15.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="s11" layoutX="15.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="s12" layoutX="15.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="s13" layoutX="15.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="s14" layoutX="15.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="s15" layoutX="15.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="s16" layoutX="15.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="s17" layoutX="15.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="s18" layoutX="15.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="s19" layoutX="15.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="s20" layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="s21" layoutX="15.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="s22" layoutX="15.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="s23" layoutX="15.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="15.0" layoutY="5.0" text="Sunday" />
+      <CheckBox fx:id="m0" layoutX="85.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="m1" layoutX="85.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="m2" layoutX="85.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="m3" layoutX="85.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="m4" layoutX="85.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="m5" layoutX="85.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="m6" layoutX="85.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="m7" layoutX="85.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="m8" layoutX="85.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="m9" layoutX="85.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="m10" layoutX="85.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="m11" layoutX="85.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="m12" layoutX="85.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="m13" layoutX="85.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="m14" layoutX="85.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="m15" layoutX="85.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="m16" layoutX="85.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="m17" layoutX="85.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="m18" layoutX="85.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="m19" layoutX="85.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="m20" layoutX="85.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="m21" layoutX="85.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="m22" layoutX="85.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="m23" layoutX="85.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="85.0" layoutY="5.0" text="Monday" />
+      <CheckBox fx:id="t0" layoutX="155.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="t1" layoutX="155.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="t2" layoutX="155.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="t3" layoutX="155.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="t4" layoutX="155.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="t5" layoutX="155.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="t6" layoutX="155.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="t7" layoutX="155.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="t8" layoutX="155.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="t9" layoutX="155.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="t10" layoutX="155.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="t11" layoutX="155.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="t12" layoutX="155.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="t13" layoutX="155.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="t14" layoutX="155.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="t15" layoutX="155.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="t16" layoutX="155.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="t17" layoutX="155.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="t18" layoutX="155.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="t19" layoutX="155.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="t20" layoutX="155.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="t21" layoutX="155.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="t22" layoutX="155.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="t23" layoutX="155.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="155.0" layoutY="5.0" text="Tuesday" />
+      <CheckBox fx:id="w0" layoutX="225.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="w1" layoutX="225.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="w2" layoutX="225.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="w3" layoutX="225.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="w4" layoutX="225.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="w5" layoutX="225.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="w6" layoutX="225.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="w7" layoutX="225.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="w8" layoutX="225.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="w9" layoutX="225.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="w10" layoutX="225.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="w11" layoutX="225.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="w12" layoutX="225.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="w13" layoutX="225.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="w14" layoutX="225.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="w15" layoutX="225.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="w16" layoutX="225.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="w17" layoutX="225.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="w18" layoutX="225.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="w19" layoutX="225.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="w20" layoutX="225.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="w21" layoutX="225.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="w22" layoutX="225.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="w23" layoutX="225.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="225.0" layoutY="5.0" text="Wedneday" />
+      <CheckBox fx:id="h0" layoutX="295.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="h1" layoutX="295.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="h2" layoutX="295.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="h3" layoutX="295.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="h4" layoutX="295.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="h5" layoutX="295.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="h6" layoutX="295.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="h7" layoutX="295.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="h8" layoutX="295.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="h9" layoutX="295.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="h10" layoutX="295.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="h11" layoutX="295.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="h12" layoutX="295.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="h13" layoutX="295.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="h14" layoutX="295.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="h15" layoutX="295.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="h16" layoutX="295.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="h17" layoutX="295.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="h18" layoutX="295.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="h19" layoutX="295.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="h20" layoutX="295.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="h21" layoutX="295.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="h22" layoutX="295.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="h23" layoutX="295.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="295.0" layoutY="5.0" text="Thursday" />
+      <CheckBox fx:id="f0" layoutX="365.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="f1" layoutX="365.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="f2" layoutX="365.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="f3" layoutX="365.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="f4" layoutX="365.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="f5" layoutX="365.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="f6" layoutX="365.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="f7" layoutX="365.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="f8" layoutX="365.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="f9" layoutX="365.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="f10" layoutX="365.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="f11" layoutX="365.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="f12" layoutX="365.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="f13" layoutX="365.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="f14" layoutX="365.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="f15" layoutX="365.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="f16" layoutX="365.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="f17" layoutX="365.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="f18" layoutX="365.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="f19" layoutX="365.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="f20" layoutX="365.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="f21" layoutX="365.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="f22" layoutX="365.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="f23" layoutX="365.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="365.0" layoutY="5.0" text="Friday" />
+      <CheckBox fx:id="z0" layoutX="435.0" layoutY="25.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="0:00" />
+      <CheckBox fx:id="z1" layoutX="435.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="1:00" />
+      <CheckBox fx:id="z2" layoutX="435.0" layoutY="75.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="2:00" />
+      <CheckBox fx:id="z3" layoutX="435.0" layoutY="100.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="3:00" />
+      <CheckBox fx:id="z4" layoutX="435.0" layoutY="125.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="4:00" />
+      <CheckBox fx:id="z5" layoutX="435.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="5:00" />
+      <CheckBox fx:id="z6" layoutX="435.0" layoutY="175.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="6:00" />
+      <CheckBox fx:id="z7" layoutX="435.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkboxchange" text="7:00" />
+      <CheckBox fx:id="z8" layoutX="435.0" layoutY="225.0" mnemonicParsing="false" onAction="#checkboxchange" text="8:00" />
+      <CheckBox fx:id="z9" layoutX="435.0" layoutY="250.0" mnemonicParsing="false" onAction="#checkboxchange" text="9:00" />
+      <CheckBox fx:id="z10" layoutX="435.0" layoutY="275.0" mnemonicParsing="false" onAction="#checkboxchange" text="10:00" />
+      <CheckBox fx:id="z11" layoutX="435.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkboxchange" text="11:00" />
+      <CheckBox fx:id="z12" layoutX="435.0" layoutY="325.0" mnemonicParsing="false" onAction="#checkboxchange" text="12:00" />
+      <CheckBox fx:id="z13" layoutX="435.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxchange" text="13:00" />
+      <CheckBox fx:id="z14" layoutX="435.0" layoutY="375.0" mnemonicParsing="false" onAction="#checkboxchange" text="14:00" />
+      <CheckBox fx:id="z15" layoutX="435.0" layoutY="400.0" mnemonicParsing="false" onAction="#checkboxchange" text="15:00" />
+      <CheckBox fx:id="z16" layoutX="435.0" layoutY="425.0" mnemonicParsing="false" onAction="#checkboxchange" text="16:00" />
+      <CheckBox fx:id="z17" layoutX="435.0" layoutY="450.0" mnemonicParsing="false" onAction="#checkboxchange" text="17:00" />
+      <CheckBox fx:id="z18" layoutX="435.0" layoutY="475.0" mnemonicParsing="false" onAction="#checkboxchange" text="18:00" />
+      <CheckBox fx:id="z19" layoutX="435.0" layoutY="500.0" mnemonicParsing="false" onAction="#checkboxchange" text="19:00" />
+      <CheckBox fx:id="z20" layoutX="435.0" layoutY="525.0" mnemonicParsing="false" onAction="#checkboxchange" text="20:00" />
+      <CheckBox fx:id="z21" layoutX="435.0" layoutY="550.0" mnemonicParsing="false" onAction="#checkboxchange" text="21:00" />
+      <CheckBox fx:id="z22" layoutX="435.0" layoutY="575.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="22:00" />
+      <CheckBox fx:id="z23" layoutX="435.0" layoutY="600.0" mnemonicParsing="false" onAction="#checkboxchange" selected="true" text="23:00" />
+      <Label layoutX="435.0" layoutY="5.0" text="Saturday" />
+      <Button layoutX="511.0" layoutY="608.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+      <TextField fx:id="c0" layoutX="511.0" layoutY="25.0" />
+      <TextField fx:id="d0" layoutX="781.0" layoutY="25.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="id0" layoutX="671.0" layoutY="25.0" prefHeight="25.0" prefWidth="101.0" />
+      <Button layoutX="876.0" layoutY="225.0" mnemonicParsing="false" onAction="#textbox" text="Save" />
+      <TextField fx:id="c1" layoutX="511.0" layoutY="75.0" />
+      <TextField fx:id="d1" layoutX="781.0" layoutY="75.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="id1" layoutX="671.0" layoutY="75.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="c2" layoutX="511.0" layoutY="125.0" />
+      <TextField fx:id="d2" layoutX="781.0" layoutY="125.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="id2" layoutX="671.0" layoutY="125.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="c3" layoutX="511.0" layoutY="175.0" />
+      <TextField fx:id="d3" layoutX="781.0" layoutY="175.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="id3" layoutX="671.0" layoutY="175.0" prefHeight="25.0" prefWidth="101.0" />
+      <TextField fx:id="c4" layoutX="511.0" layoutY="225.0" />
+      <TextField fx:id="d4" layoutX="781.0" layoutY="225.0" prefHeight="25.0" prefWidth="39.0" />
+      <TextField fx:id="id4" layoutX="671.0" layoutY="225.0" prefHeight="25.0" prefWidth="101.0" />
+      <Label layoutX="511.0" layoutY="5.0" prefHeight="17.0" prefWidth="101.0" text="Course Name" />
+      <Label layoutX="671.0" layoutY="5.0" prefHeight="17.0" prefWidth="63.0" text="Course ID" />
+      <Label layoutX="781.0" layoutY="6.0" text="Difficulty (1-5)" />
+      <Text layoutX="511.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Make sure to save after listing classes/difficulties" wrappingWidth="313.13671875" />
+      <Text layoutX="511.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Use checkboxes on left to block out hours, a box being checked means that hour is blocked" wrappingWidth="313.13671875" />
+      <Text layoutX="511.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Click a checkbox at least once" wrappingWidth="313.13671875" />
+      <Text layoutX="511.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Enter numbers 1-5 for difficulty" wrappingWidth="313.13671875" />
+      <Text layoutX="511.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Invalid values or numbers below 1 for difficulty will default it to 1" wrappingWidth="313.13671875" />
+      <Text layoutX="511.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Numbers above 5 for difficulty will default it to 5" wrappingWidth="313.13671875" />
+      <Button layoutX="849.0" layoutY="608.0" mnemonicParsing="false" onAction="#returnToHome" text="Back to Home" />
+   </children>
+</AnchorPane>
