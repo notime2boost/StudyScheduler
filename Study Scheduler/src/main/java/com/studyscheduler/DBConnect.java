@@ -74,10 +74,7 @@ public class DBConnect {
 			query = query + "SET password = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("classes")) {
-			query = query + "SET classes = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
-		}
-		else if(type.equals("blockouts")) {
-			query = query + "SET blockouts = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET classes = \'[" + values[0] + "," + values[1] + "," + values[2] + "," + values[3] + "," + values[4] + "]\' WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("schedules")) {
 			query = query + "SET schedules = \'[" + values[0] + "," + values[1] + "," + values[2] + "," + values[3] + "]\' WHERE username = \"" + user + "\";";

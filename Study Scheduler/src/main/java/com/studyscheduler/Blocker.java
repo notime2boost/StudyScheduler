@@ -198,6 +198,19 @@ public class Blocker {
                 }
             }
         }
+        Runner r = new Runner();
+
+        DBConnect dbc = new DBConnect();
+        Connection con = dbc.connectToDb();
+        Object[] list = new Object[4];
+        list[0] = "[\"" + x.coursename[0] + "\",\"" + x.courseid[0] + "\"," + x.difficulty[0] + "]";
+        list[1] = "[\"" + x.coursename[1] + "\",\"" + x.courseid[1] + "\"," + x.difficulty[1] + "]";
+        list[2] = "[\"" + x.coursename[2] + "\",\"" + x.courseid[2] + "\"," + x.difficulty[2] + "]";
+        list[3] = "[\"" + x.coursename[3] + "\",\"" + x.courseid[3] + "\"," + x.difficulty[3] + "]";
+
+        dbc.updateStudentInfo(con, "classes", r.getUser(), list);
+
+        dbc.closeConnect(con);
     }
 
 
@@ -227,12 +240,6 @@ public class Blocker {
         for(i = 0; i<5; i++){
             totalstudyhours += x.difficulty[i]*2;
         }
-
-        System.out.println();
-        System.out.println("You have this many free hours: " + open);
-        System.out.println("You have blocked out this many hours: " + blocked);
-        System.out.println("You will study for this many hours: " + totalstudyhours);
-        System.out.println();
 
         int hours = 0;
         int idd = 0;
@@ -338,19 +345,7 @@ public class Blocker {
             dbc.updateStudentInfo(con, "schedules", r.getUser(), list);
 
             dbc.closeConnect(con);
-            /*
-            System.out.println("SCHEDULE 1");
-            System.out.println(Arrays.deepToString(x.time1).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-            System.out.println();
-            System.out.println("SCHEDULE 2");
-            System.out.println(Arrays.deepToString(x.time2).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-            System.out.println();
-            System.out.println("SCHEDULE 3");
-            System.out.println(Arrays.deepToString(x.time3).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-            System.out.println();
-            System.out.println("SCHEDULE 4");
-            System.out.println(Arrays.deepToString(x.time4).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-            */
+
         }
         /*
         Schedules are in 2d array format and are the variables: x.time1, x.time2, x.time3, x.time4
