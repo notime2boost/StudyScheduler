@@ -3,9 +3,15 @@ package com.studyscheduler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import com.calendarfx.view.CalendarView;
+import com.calendarfx.view.DetailedWeekView;
+import com.calendarfx.view.WeekView;
 
 public class Runner extends Application {
     private static Stage stageMaster;
@@ -39,6 +45,21 @@ public class Runner extends Application {
         stageMaster.setTitle("Study Scheduler");
         stageMaster.setScene(scene);
         stageMaster.show();
+    }
+
+    public void showSchedule(DetailedWeekView agenda) {
+        final Stage popup = new Stage();
+        popup.initModality(Modality.APPLICATION_MODAL);
+
+
+
+        popup.initOwner(stageMaster);
+        Scene popScene = new Scene(agenda, 1280, 720);
+
+
+
+        popup.setScene(popScene);
+        popup.showAndWait();
     }
 
 
