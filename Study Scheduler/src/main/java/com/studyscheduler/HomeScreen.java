@@ -103,7 +103,9 @@ public class HomeScreen {
 
         DBConnect dbc = new DBConnect();
         Connection con = dbc.connectToDb();
-        dbc.updateStudentInfo(con, "username", r.getUser(), usernameTemp2);
+        Object[] list = new Object[1];
+        list[0] = usernameTemp2;
+        dbc.updateStudentInfo(con, "username", r.getUser(), list);
         dbc.closeConnect(con);
 
         r.setUser(usernameTemp);
@@ -122,7 +124,9 @@ public class HomeScreen {
         if(newTemp2.equals(newTemp)) {
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
-            dbc.updateStudentInfo(con, "password", r.getUser(), newTemp);
+            Object[] list = new Object[1];
+            list[0] = newTemp;
+            dbc.updateStudentInfo(con, "password", r.getUser(), list);
             dbc.closeConnect(con);
         }
 

@@ -35,7 +35,7 @@ public class DBConnect {
 	
 	// Inserts the desired info into the correct column of the database depending on the type parameter.
 	// Takes in the connection to the database, the column to insert into, and an Object array of the values to be inserted.
-	public void insertStudentInfo(Connection connection, String type, Object[] values) {
+	public void insertStudentInfo(Connection connection, Object[] values) {
 		Statement statement = null;
 		String query = "INSERT INTO Student ";
 		
@@ -45,20 +45,9 @@ public class DBConnect {
 			System.out.println("Error! Could not create a statement.");
 			e.printStackTrace();
 		}
-		
-		if(type.equals("NewStudent")) {
-			query = query + "(username, password) VALUES (\"" + values[0] + "\", \""  + values[1] + "\");";
-		}
-		else if(type.equals("classes")) {
-			query = query + "(classes) VALUES (\"" + argsToString(values) + "\");";
-		}
-		else if(type.equals("blockouts")) {
-			query = query + "(blockouts) VALUES (\"" + argsToString(values) + "\");";
-		}
-		else if(type.equals("schedules")) {
-			query = query + "(schedules) VALUES (\"" + argsToString(values) + "\");";
-		}
-		System.out.println(query);
+
+		query = query + "(username, password) VALUES (\"" + values[0] + "\", \""  + values[1] + "\");";
+
 		try {
 			statement.execute(query);
 		} catch (SQLException e) {
@@ -67,7 +56,7 @@ public class DBConnect {
 		}
 	}
 
-	public void updateStudentInfo(Connection connection, String type, String user, String newInfo) {
+	public void updateStudentInfo(Connection connection, String type, String user, Object[] values) {
 		Statement statement = null;
 		String query = "UPDATE Student ";
 		
@@ -79,19 +68,19 @@ public class DBConnect {
 		}
 
 		if(type.equals("username")) {
-			query = query + "SET username = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET username = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("password")) {
-			query = query + "SET password = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET password = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("classes")) {
-			query = query + "SET classes = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET classes = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("blockouts")) {
-			query = query + "SET blockouts = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET blockouts = \"" + values[0] + "\" WHERE username = \"" + user + "\";";
 		}
 		else if(type.equals("schedules")) {
-			query = query + "SET schedules = \"" + newInfo + "\" WHERE username = \"" + user + "\";";
+			query = query + "SET schedules = \'[" + values[0] + "," + values[1] + "," + values[2] + "," + values[3] + "]\' WHERE username = \"" + user + "\";";
 		}
 
 		try {
@@ -229,4 +218,28 @@ public class DBConnect {
 		
 		return argsString.toString();
 	}
+
+	public String schedToString(int[][] schedArr) {
+		String schedString = "[";
+
+		for(int i = 0; i < schedArr.length; i++) {
+			if(i == 0) {
+				schedString = schedString + "[";
+			}
+			else if(i > 0) {
+				schedString = schedString + "], [";
+			}
+			for(int j = 0; j < schedArr[i].length; j++) {
+				if(j != schedArr[i].length - 1) {
+					schedString = schedString + schedArr[i][j] + ",";
+				}
+				else if(j == schedArr[i].length - 1) {
+					schedString = schedString + schedArr[i][j];
+				}
+			}
+		}
+		schedString = schedString + "]]";
+		return schedString;
+	}
+
 }

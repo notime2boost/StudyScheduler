@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
 public class Blocker {
     //Checkboxes Variables
@@ -202,7 +205,7 @@ public class Blocker {
     // 1 means blockedout time
     // 0 means open time
     // 11,12,13,14,15 are ids for study hours for classes
-    public void submit(ActionEvent event) {
+    public void submit(ActionEvent event) throws SQLException {
         blocked = 0;
         open = 0;
         //Copies blocked times to the other schedules. Ensures a proper reset if user clicks submit again
@@ -322,7 +325,20 @@ public class Blocker {
                     }
                 }
             }
+            Runner r = new Runner();
 
+            DBConnect dbc = new DBConnect();
+            Connection con = dbc.connectToDb();
+            Object[] list = new Object[4];
+            list[0] = dbc.schedToString(x.time1);
+            list[1] = dbc.schedToString(x.time2);
+            list[2] = dbc.schedToString(x.time3);
+            list[3] = dbc.schedToString(x.time4);
+
+            dbc.updateStudentInfo(con, "schedules", r.getUser(), list);
+
+            dbc.closeConnect(con);
+            /*
             System.out.println("SCHEDULE 1");
             System.out.println(Arrays.deepToString(x.time1).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
             System.out.println();
@@ -334,7 +350,7 @@ public class Blocker {
             System.out.println();
             System.out.println("SCHEDULE 4");
             System.out.println(Arrays.deepToString(x.time4).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
-
+            */
         }
         /*
         Schedules are in 2d array format and are the variables: x.time1, x.time2, x.time3, x.time4

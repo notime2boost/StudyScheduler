@@ -24,9 +24,10 @@
             <Button fx:id="logoutButton" layoutX="1122.0" layoutY="80.0" mnemonicParsing="false" onAction="#userLogout" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Logout" />
             <ButtonBar layoutX="46.0" layoutY="80.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="597.0">
               <buttons>
-                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#userEdit" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Edit Schedule" />
+                  <Button mnemonicParsing="false" onAction="#inputData" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Input Data" />
                   <Button fx:id="viewButton" mnemonicParsing="false" onAction="#userViewSchedule" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="View Schedule" />
                   <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#userDownload" prefHeight="39.0" prefWidth="136.0" style="-fx-background-color: #ccc613;" text="Download Schedule" />
+                  <Button fx:id="editButton1" mnemonicParsing="false" onAction="#userEdit" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Edit Schedule" />
               </buttons>
             </ButtonBar>
             <Button fx:id="accountButton" layoutX="991.0" layoutY="80.0" mnemonicParsing="false" onAction="#gotoAccountSettings" prefHeight="39.0" prefWidth="106.0" style="-fx-background-color: #ccc613;" text="Account Settings" />

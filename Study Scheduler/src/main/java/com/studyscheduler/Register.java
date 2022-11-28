@@ -69,7 +69,7 @@ public class Register {
             Object[] list = new Object[2];
             list[0] = usernameTemp;
             list[1] = passwordTemp;
-            dbc.insertStudentInfo(con, "NewStudent", list);
+            dbc.insertStudentInfo(con, list);
         }
         dbc.closeConnect(con);
     }
