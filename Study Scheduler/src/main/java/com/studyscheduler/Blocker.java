@@ -202,11 +202,12 @@ public class Blocker {
 
         DBConnect dbc = new DBConnect();
         Connection con = dbc.connectToDb();
-        Object[] list = new Object[4];
+        Object[] list = new Object[5];
         list[0] = "[\"" + x.coursename[0] + "\",\"" + x.courseid[0] + "\"," + x.difficulty[0] + "]";
         list[1] = "[\"" + x.coursename[1] + "\",\"" + x.courseid[1] + "\"," + x.difficulty[1] + "]";
         list[2] = "[\"" + x.coursename[2] + "\",\"" + x.courseid[2] + "\"," + x.difficulty[2] + "]";
         list[3] = "[\"" + x.coursename[3] + "\",\"" + x.courseid[3] + "\"," + x.difficulty[3] + "]";
+        list[4] = "[\"" + x.coursename[4] + "\",\"" + x.courseid[4] + "\"," + x.difficulty[4] + "]";
 
         dbc.updateStudentInfo(con, "classes", r.getUser(), list);
 

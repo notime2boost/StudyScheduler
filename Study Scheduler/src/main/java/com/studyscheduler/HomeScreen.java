@@ -3,6 +3,8 @@ package com.studyscheduler;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -146,7 +148,7 @@ public class HomeScreen {
         r.changeScene("accountSettings.fxml");
     }
 
-    public void userDownload() {
+    public void userDownload() throws SQLException {
         // TODO: Add code for download
 
         WritableImage save = new WritableImage(1920, 1080);
@@ -157,14 +159,14 @@ public class HomeScreen {
         //ImageIO.write(renderedImage, "png", file);
     }
 
-    public void userViewSchedule() {
+    public void userViewSchedule() throws SQLException {
         // TODO: add code to view schedule
 
         Runner r = new Runner();
         r.showSchedule(generateSchedule());
     }
 
-    private DetailedWeekView generateSchedule() {
+    private DetailedWeekView generateSchedule() throws SQLException {
         // This marks the sunday that begins the week we're looking at.
         // MAY throw an error if the day you are calling this on is sunday, goes to
         // previous week
@@ -175,6 +177,17 @@ public class HomeScreen {
         Calendar calendar = new Calendar("Home");
         calendar.setStyle(Style.STYLE1);
 
+        Runner r = new Runner();
+        DBConnect dbc = new DBConnect();
+        Connection con = dbc.connectToDb();
+        ResultSet student = dbc.retrieveStudentInfo(con, "schedule", r.getUser());
+        student.next();
+        String sched = student.getString("schedules");
+        ResultSet classList = dbc.retrieveStudentInfo(con, "class", r.getUser());
+        classList.next();
+        String classes = classList.getString("classes");
+        System.out.println(sched);
+        System.out.println(classes);
         // Add entries here (DB)
         for (int i = 0; i < 7; i++) {
             String title = "tester";
@@ -189,6 +202,7 @@ public class HomeScreen {
         view.setAdjustToFirstDayOfWeek(true);
         view.setDate(LocalDate.now());
         view.setVisibleHours(24);
+        dbc.closeConnect(con);
         return view;
     }
 
