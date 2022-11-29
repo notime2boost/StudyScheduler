@@ -3,15 +3,12 @@ package com.studyscheduler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import com.calendarfx.view.CalendarView;
 import com.calendarfx.view.DetailedWeekView;
-import com.calendarfx.view.WeekView;
 
 public class Runner extends Application {
     private static Stage stageMaster;
