@@ -209,6 +209,9 @@ public class HomeScreen {
         int dayOffset = 0;
         for (String s2[] : schedArr) {
             for (int j = 0; j < 24; j++) {
+                //Skip consecutive times that have already been handled
+                if (j >= 1)
+                    if (s2[j].equals(s2[j-1])) continue;
                 // skip empty and blockout days, or null just in case
                 if (s2[j].equals("1") || s2[j].equals("0") || s2[j].equals(null)) continue;
                 else {
@@ -216,6 +219,7 @@ public class HomeScreen {
                     String title = classArr[classIndex - 10][0];
 
                     // if it continues for multiple hours we want to group it, but not if it is the end of the day
+                    int temp = j;
                     int duration = 1;
                     if (j < 24) {
                         while (s2[j + 1].equals(s2[j])) {
@@ -223,7 +227,7 @@ public class HomeScreen {
                             duration++;
                         }
                     }
-                
+                    j = temp;
 
                     Interval time = new Interval(sunday.plusDays(dayOffset), LocalTime.of(j, 00), sunday.plusDays(dayOffset),
                             LocalTime.of(j + duration, 00));
