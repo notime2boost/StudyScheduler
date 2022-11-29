@@ -50,27 +50,27 @@ public class Login {
         Connection con = dbc.connectToDb();
 
         ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
-        student.next();
-
-        // if wrong credentials
-        if (usernameTemp.equals(student.getString("username")) && passwordTemp.equals(student.getString("password"))) {
-            wrongLogin.setText("Success");
-
-            // Change scene
-            Runner r = new Runner();
-            r.setUser(usernameTemp);
-            r.changeScene("home.fxml");
-            
-
-        }
-        else if (!usernameTemp.equals(student.getString("username"))) {
+        if(student.next() == false) {
             wrongLogin.setText("Incorrect Username");
         }
 
-        else if (!passwordTemp.equals(student.getString("password"))) {
-            wrongLogin.setText("Incorrect Password");
-        }
+        else {
+            // if correct credentials log the user in
+            if (usernameTemp.equals(student.getString("username")) && passwordTemp.equals(student.getString("password"))) {
+                wrongLogin.setText("Success");
 
+                // Change scene
+                Runner r = new Runner();
+                r.setUser(usernameTemp);
+                r.changeScene("home.fxml");
+
+
+            } else if (!usernameTemp.equals(student.getString("username"))) {
+                wrongLogin.setText("Incorrect Username");
+            } else if (!passwordTemp.equals(student.getString("password"))) {
+                wrongLogin.setText("Incorrect Password");
+            }
+        }
         dbc.closeConnect(con);
     }
 

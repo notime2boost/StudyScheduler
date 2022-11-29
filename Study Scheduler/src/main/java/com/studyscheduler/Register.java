@@ -57,19 +57,26 @@ public class Register {
 
         // Check to see if this username is already taken.
         ResultSet student = dbc.retrieveStudentInfo(con, "login", usernameTemp);
-        student.next();
-
-        // If it is taken, let the user know
-        if (usernameTemp.equals(student.getString("username"))) {
-            wrongLogin.setText("Username Is Already Taken. Please Choose Another.");
-        }
-
-        // If it is available create a new account
-        else {
+        if (student.next() == false) {
             Object[] list = new Object[2];
             list[0] = usernameTemp;
             list[1] = passwordTemp;
             dbc.insertStudentInfo(con, list);
+        }
+
+        else {
+            // If it is taken, let the user know
+            if (usernameTemp.equals(student.getString("username"))) {
+                wrongLogin.setText("Username Is Already Taken. Please Choose Another.");
+            }
+
+            // If it is available create a new account
+            else {
+                Object[] list = new Object[2];
+                list[0] = usernameTemp;
+                list[1] = passwordTemp;
+                dbc.insertStudentInfo(con, list);
+            }
         }
         dbc.closeConnect(con);
     }
