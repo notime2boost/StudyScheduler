@@ -104,12 +104,12 @@ public class HomeScreen {
         Optional<ButtonType> result = alert.showAndWait();
 
         if ((result.isPresent()) && (result.get() == ButtonType.OK)) {
+            Runner r = new Runner();
             DBConnect dbc = new DBConnect();
             Connection con = dbc.connectToDb();
-            dbc.deleteStudentInfo(con, "usernameTemp");
+            dbc.deleteStudentInfo(con, r.getUser());
             dbc.closeConnect(con);
-
-            Runner r = new Runner();
+            
             r.changeLoginScene("login.fxml");
         }
     }

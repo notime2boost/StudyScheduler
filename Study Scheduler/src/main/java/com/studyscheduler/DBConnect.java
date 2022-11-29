@@ -90,7 +90,7 @@ public class DBConnect {
 
 	public void deleteStudentInfo(Connection connection, String user) {
 		Statement statement = null;
-		String query = "DELETE FROM Student WHERE username = " + user + ";";
+		String query = "DELETE FROM Student WHERE username = \'" + user + "\';";
 		
 		try {
 			statement = connection.createStatement();
